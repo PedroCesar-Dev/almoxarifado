@@ -1,0 +1,220 @@
+*{
+    color: #000000;
+    margin:0;
+    padding: 0;
+}
+
+#urgente:checked{
+    border: 1px solid red;      
+    background-color: red;
+    transform: scale(1.2);
+}
+#medio:checked{
+    border: 1px solid yellow;      
+    background-color: yellow;
+    transform: scale(1.2);    
+}
+#baixo:checked{
+    border: 1px solid green;      
+    background-color: green;
+    transform: scale(1.2);
+}
+
+/* body{
+    width: 100vw;
+} */
+.main{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;    
+    align-items: center;   
+    justify-content: center;  
+
+}
+.header{
+    width: 50vw;
+    height: 5vh;
+    background-color: #15C7FF;   
+    display: flex;
+    align-items: center;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    border-radius: 20px;
+  
+}
+.header span{
+    color: #ffffff;
+}
+.conteudo{
+    /* background-color: yellow; */
+    padding-top: 3vh;
+    width: 50vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    border-color:  #CDCDCD;;
+    border-radius: 20px;
+    border-style: solid;
+    flex-wrap: wrap;
+  
+}
+.camposPrincipais{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3vh;
+    flex-wrap: wrap;
+}
+.linhasCampos{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1vh;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.grupoInput{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.grupo9{
+    margin-left: 1px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.grupoPrioridade{
+    display: flex;
+    padding-left: 2px;    
+}
+
+.grupoCategoria{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnAdd{    
+    width: 30px;
+    height: 30px;
+   
+}
+.btnAdd:hover{
+    cursor: pointer; 
+    scale: 1.3;    
+    transition-duration: 1000ms;    
+
+}
+
+.grupoMotivo{
+    display: flex;
+    justify-content: center;
+    align-items: center;        
+
+}
+
+/* ITENS */
+.camposItens{
+    display: flex;
+    flex-direction: column;
+    border-color: #CDCDCD;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;    
+    width: 100%;
+    
+}
+.linhaAdicionarItens{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: end;        
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+.grupoStatusEstoque{
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    margin-left: 5px;           
+}
+.grupoStatusEstoque img{
+    display: flex;
+    width: 30px;
+    height: 30px;
+}
+.grupoBtnInserirItens{
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    margin-left: 5px; 
+}
+
+.tabelaItens{
+    border: 1px solid #CDCDCD;
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight:unset;
+    table-layout: fixed;
+}
+
+.tabelaItens th{
+    background-color:#15C7FF; 
+    border: 1px solid #CDCDCD;
+    border-collapse: collapse; 
+    color: white; 
+   
+    text-align: left;
+    padding-left: 10px;
+}
+
+#btnRemover{
+    border-radius: 10px;
+    background-color: red;
+}
+
+.tabelaItens tr, .tabelaItens td{
+    border: 1px solid #CDCDCD;
+    border-collapse: collapse;
+    padding-left: 10px;
+}
+
+.radioPrioridade{  
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 3px;
+    padding-left: 1px;
+    padding-right: 5px;
+    border-color: #CDCDCD;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    color: #000000;
+}
+
+
+.radioPrioridadeDesabilitado{  
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 3px;
+    padding-left: 1px;
+    padding-right: 5px;
+    border-color: #CDCDCD;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    background-color: red;
+    color:#ffffff;
+}
