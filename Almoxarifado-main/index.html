@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Almoxarifado</title>
     <link rel="stylesheet" href="./assets/css/requisicao.css">
     <link rel="stylesheet" href="./assets/css/inputRequisicao.css">
+    <link rel="stylesheet" href="./assets/css/tabelas.css">
+    
 </head>
 <body>
     <div class="menu"></div>
@@ -18,50 +20,50 @@
             <div class="dadosPrincipais">
                 <div class="titulo">
                     <span>Dados Principais | Requisição Nº </span>
-                    <input type="text" id="inpNumero" data-obrigatorio="true" data-only-number="true">
+                    <input type="number" id="inpNumero">
                 </div>
                 <div class="camposPrincipais">
                     <div class="camposPrincipaisLinha1 linhasCampos">
                         <div class="grupo1 grupoInput">
                             <span>ID.</span>
-                            <input type="text" id="idDepartamento" data-obrigatorio="true" data-only-number="true">
+                            <input type="number" id="idDepartamento">
                         </div>
                         <div class="grupo2 grupoInput">
                             <span>Departamento</span>
-                            <input type="text" id="departamento" data-obrigatorio="true">
+                            <input type="text" id="departamento">
                         </div>
                         <div class="grupo3 grupoInput">
                             <span>Data</span>
-                            <input type="date" id="dataRequisicao" data-obrigatorio="true">
+                            <input type="date" id="dataRequisicao">
                         </div>
                     </div>
                     <div class="camposPrincipaisLinha2 linhasCampos">
                         <div class="grupo4 grupoInput">
                             <span>ID Func.</span>
-                            <input type="text" id="idFuncionario" data-obrigatorio="true" data-only-number="true">
+                            <input type="number" id="idFuncionario">
                         </div>
                         <div class="grupo5 grupoInput">
                             <span>Nome Funcionário</span>
-                            <input type="text" id="NomeFuncionario" data-obrigatorio="true">
+                            <input type="text" id="NomeFuncionario">
                         </div>
                         <div class="grupo6 grupoInput">
                             <span>Cargo</span>
-                            <input type="text" id="cargo" data-obrigatorio="true">
+                            <input type="text" id="cargo">
                         </div>
                     </div>
                     <div class="camposPrincipaisLinha3 linhasCampos">
                         <div class="grupo7 grupoInput">
                             <span>Categoria Motivo</span>  
                             <div class="grupoCategoria">                                                         
-                                <select id="categoriaMotivo" data-obrigatorio="true"></select>
-                                <img class="btnAdd"  src="./assets/img/add.svg" alt="" >
+                                <select id="categoriaMotivo"></select>
+                                <img class="btnAdd" src="./assets/img/add.svg" alt="">
                             </div>
                         </div>
                         <div class="grupo8 grupoInput">
                             <span>Motivo</span> 
                             <div class="grupoMotivo"> 
-                                <select id="Motivo" data-obrigatorio="true"></select>
-                                <img class="btnAdd"  src="./assets/img/add.svg" alt="" >
+                                <select id="Motivo"></select>
+                                <img class="btnAdd" src="./assets/img/add.svg" alt="">
                             </div>                            
                    
                         </div>
@@ -69,17 +71,17 @@
                             <span>Nível de Prioridade</span>
                             <div class="radioPrioridade" id="radioPrioridade">
                                 <div class="grupoPrioridade">
-                                    <input class="chkPrioridade" type="radio" name="prioridade" id="urgente" data-obrigatorio="true">
+                                    <input class="chkPrioridade" type="radio" name="prioridade" id="urgente">
                                     <span>Urgente</span>
                                     
                                 </div>
                                 <div class="grupoPrioridade">
-                                    <input class="chkPrioridade" type="radio" name="prioridade" id="medio" data-obrigatorio="true">
+                                    <input class="chkPrioridade" type="radio" name="prioridade" id="medio">
                                     <span>Médio</span>
                                    
                                 </div>
                                 <div class="grupoPrioridade">
-                                    <input class="chkPrioridade" type="radio" name="prioridade" id="baixo" data-obrigatorio="true">
+                                    <input class="chkPrioridade" type="radio" name="prioridade" id="baixo">
                                     <span>Baixo</span>
                                     
                                 </div>
@@ -94,22 +96,26 @@
             </div>
             <div class="itensRequisicao">
                 <div class="titulo">
-                    <span>Dados Principais | Requisição Nº </span>                
+                    <span>Itens da Requisição </span>                
                 </div>
                 <div class="camposItens">
                     <div class="linhaAdicionarItens">
                         
                             <div class="grupoProduto">
                                 <span>Cod. Produto</span>
-                                <input type="text" id="CodigoProduto" data-only-number="true">
+                                <input type="text" id="CodigoProduto">
                             </div>
                             <div class="grupoProdutoDescricao">
                                 <span>Descrição</span>
                                 <input type="text" id="DescricaoProduto">
                             </div>
                             <div class="grupoEstoque">
+                                <span>Estoque</span>
+                                <input type="text" id="Estoque">
+                            </div>
+                            <div class="grupoQuantidade">
                                 <span>Quantidade</span>
-                                <input type="text" id="Estoque" data-only-number="true">
+                                <input type="text" id="Quantidade">
                             </div>
                         
                         
@@ -120,56 +126,39 @@
                           
                             </div>
                             <div class="grupoBtnInserirItens">
-                                <div class="BtnInserirItens" id="btnAdicionarItens" onclick="criarBtnRemover()">  
+                                <div class="BtnInserirItens" id="btnAdicionarItens">  
                                     <span>Adicionar</span>
                                 </div>
                             </div>
+                            <div class="grupoBtnInserirItens">
+                                <div class="BtnInserirItens" id="btnVerificar">
+                                    <span>Verificar</span>
+                                </div>
+                            </div>
+                    </div>
                     <div class="tabela">
                         <table class="tabelaItens" id="tabelaItens">
                             <tr>
-                                <th style="max-width: 10px;">Código</th>
+                                <th>Código</th>
                                 <th>Produto</th>
-                                <th style="max-width: 40px;width: 40px;">Qtd</th>
-                                <th style="max-width: 40px;width: 40px;">Und</th>
-                                <th style="max-width: 80px;width: 80px;">Preço</th>
-                                <th style="max-width: 100px;width: 100px;">Total</th>
-                                <th style="max-width: 100px;width: 100px;">#</th>
+                                <th>Qtd</th>
+                                <th>Un.</th>
+                                <th>Preço</th>
+                                <th>Total</th>
                             </tr>
-                    <div class="tabela2">
-                        <table class="tabelaItens" id="tabelaItens">
-                            <th style="max-width: 100px;width: 100px;">Preço final:</th>
-                            <h5></h5>
                         </table>
                     </div>
-                            <!-- <tr>
-                                <td>Código</td>
-                                <td>Item</td>
-                                <td>Qtd</td>
-                                <td>Tipo</td>
-                                <td>Preço</td>
-                                <td>Total</td>
-                                <td></td>
-                            </tr> -->
-                        </table>
-                    </div>
-                  
-                  
-                     
-                    </div>
-
-                    <div class="grupoBtnInserirItens">
-                        <div class="BtnInserirItens" id="btnVerificar">  
-                            <span>Verificar</span>
-                        </div>
-                    </div>
+                </div>
+                <div class="linhaTotal">
+                    <span>Total</span>
+                    <input type="text" readonly id="total" value="0">
                 </div>
             </div>
     
         </div>
     </div>
 
-   
-    <script src="./assets/scripts/dados.js"></script>
-    <script src="./assets/scripts/main.js"></script>
+<script src="./assets/scripts/dados.js"></script>
+<script src="./assets/scripts/main.js"></script>
 </body>
 </html>

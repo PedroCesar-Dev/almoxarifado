@@ -154,10 +154,11 @@ function eventoClickPrioridadeHabilitarCor(){
 
 
 document.getElementById('btnAdicionarItens').addEventListener('click', function(){
+    
     const tabelaItens = document. getElementById('tabelaItens');
     const campoProduto = document.getElementById('CodigoProduto');
     const campoDescricaoProduto = document.getElementById('DescricaoProduto');
-    const campoQuantidade = document.getElementById('Estoque');
+    const campoQuantidade = document.getElementById('Quantidade');
     const totalRequisicao = document.getElementById('total');
 
     const linha = document.createElement('tr');
@@ -178,10 +179,9 @@ document.getElementById('btnAdicionarItens').addEventListener('click', function(
     tdPreco.innerHTML = produtoPesquisado[0].Preco;
     tdTotalLinha.innerHTML = campoQuantidade.value*produtoPesquisado[0].Preco;
 
+    totalRequisicao.value = parseFloat(totalRequisicao.value) + parseFloat(campoQuantidade.value*produtoPesquisado[0].Preco);
     const tdTotalRequisicao = document.createElement('td');
     tdTotalRequisicao.innerHTML = totalRequisicao.value;
-    linha.appendChild(tdTotalRequisicao);
-
     linha.appendChild(tdCodigo);
     linha.appendChild(tdDescricao);
     linha.appendChild(tdQuantidade);
@@ -192,13 +192,12 @@ document.getElementById('btnAdicionarItens').addEventListener('click', function(
     linha.appendChild(tdBtnRemover);
     tabelaItens.appendChild(linha);
 
-
-
-    totalRequisicao.value = parseFloat(totalRequisicao.value) + parseFloat(campoQuantidade.value*produtoPesquisado[0].Preco);
+    
+    
 
 })
 
-function criarBtnRemover(tabela, objLinha, numeroLinha){
+function criarBtnRemover(tabelaItens, objLinha, numeroLinha){
     const btnRemoverItem = document.createElement('div');
         btnRemoverItem.className = "BtnRemover";
         btnRemoverItem.id = "btnRemover" + numeroLinha;
