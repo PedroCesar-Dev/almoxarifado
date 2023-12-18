@@ -194,8 +194,7 @@ document.getElementById('btnAdicionarItens').addEventListener('click', function(
 
 
 
-    totalRequisicao.value = parseFloat(totalRequisicao.value) + parseFloat(tdTotalLinha.innerHTML);
-
+    totalRequisicao.value = parseFloat(totalRequisicao.value) + parseFloat(campoQuantidade.value*produtoPesquisado[0].Preco);
 
 })
 
