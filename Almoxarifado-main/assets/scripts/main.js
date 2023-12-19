@@ -1,26 +1,8 @@
-    // document.getElementById('departamento').addEventListener('focus',function(){
-    
-//     const inputDepartamento = document.getElementById('departamento');
-//     inputDepartamento.style.backgroundColor="aqua"
-// });
-
-// document.getElementById('departamento').addEventListener('blur',function(){
-    
-//     const inputDepartamento = document.getElementById('departamento');
-//     inputDepartamento.style.backgroundColor="white"
-// });
-
 function adicionarCorAoFocarInput(){
-    const listInput = document.querySelectorAll("input[type=text]");
-    // console.log(listInput.length);
-    // console.log(listInput);
-
-    // for (let i = 0; i < listInput.length; i++){
-    //     listInput[i].style.backgroundColor="aqua"
-    // }
+    const listInput = document.querySelectorAll("input");
     listInput.forEach(function(campo){
         campo.addEventListener('focus', function(){
-            campo.style.backgroundColor="aqua";
+            campo.style.backgroundColor="#17B169";
         });
 
         campo.addEventListener('blur', function(){
@@ -75,8 +57,10 @@ document.getElementById('CodigoProduto').addEventListener("keyup", function(){
     const codigoPesquisado = document.getElementById('CodigoProduto').value;
     let produtosFiltrados = produtos.filter((p)=> p.idProduto==codigoPesquisado);
 
-    if(produtosFiltrados.length>0){
+    if(produtosFiltrados.length !=='undefined'){
         document.getElementById('DescricaoProduto').value = produtosFiltrados[0].Descricao;
+        document.getElementById('Estoque').value = produtosFiltrados[0].Estoque;
+        document.getElementById('Quantidade').disabled = false
     }else{
         document.getElementById('DescricaoProduto').value = "";
     }
@@ -152,7 +136,6 @@ function eventoClickPrioridadeHabilitarCor(){
     });
 }
 
-
 document.getElementById('btnAdicionarItens').addEventListener('click', function(){
     
     const tabelaItens = document. getElementById('tabelaItens');
@@ -170,6 +153,7 @@ document.getElementById('btnAdicionarItens').addEventListener('click', function(
     const tdPreco = document.createElement('td');
     const tdTotalLinha = document.createElement('td');
     const tdBtnRemover = document.createElement('td');
+    const tdTotalRequisicao = document.createElement('td');
     const produtoPesquisado = produtos.filter((p)=> p.idProduto==campoProduto.value);
 
     tdCodigo.innerHTML = campoProduto.value;
@@ -178,10 +162,9 @@ document.getElementById('btnAdicionarItens').addEventListener('click', function(
     tdUnd.innerHTML = produtoPesquisado[0].Unidade;
     tdPreco.innerHTML = produtoPesquisado[0].Preco;
     tdTotalLinha.innerHTML = campoQuantidade.value*produtoPesquisado[0].Preco;
-
-    totalRequisicao.value = parseFloat(totalRequisicao.value) + parseFloat(campoQuantidade.value*produtoPesquisado[0].Preco);
-    const tdTotalRequisicao = document.createElement('td');
     tdTotalRequisicao.innerHTML = totalRequisicao.value;
+
+    totalRequisicao.value = parseInt(totalRequisicao.value) + parseInt(campoQuantidade.value*produtoPesquisado[0].Preco);
     linha.appendChild(tdCodigo);
     linha.appendChild(tdDescricao);
     linha.appendChild(tdQuantidade);
@@ -191,10 +174,6 @@ document.getElementById('btnAdicionarItens').addEventListener('click', function(
     tdBtnRemover.appendChild(criarBtnRemover(tabelaItens, linha));
     linha.appendChild(tdBtnRemover);
     tabelaItens.appendChild(linha);
-
-    
-    
-
 })
 
 function criarBtnRemover(tabelaItens, objLinha, numeroLinha){
@@ -212,7 +191,7 @@ function criarBtnRemover(tabelaItens, objLinha, numeroLinha){
             const colunas = objLinha.getElementsByTagName('td');
             let valorLinha = colunas[5].innerText;
 
-            totalRequisicao.value = parseFloat(totalRequisicao.value-parseFloat(valorLinha));
+            totalRequisicao.value = parseInt(totalRequisicao.value-parseInt(valorLinha));
         });
 
         return btnRemoverItem;
