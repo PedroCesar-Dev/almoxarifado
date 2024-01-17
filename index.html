@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Almoxarifado</title>
+    <link rel="stylesheet" href="./assets/css/requisicao.css">
+    <link rel="stylesheet" href="./assets/css/inputRequisicao.css">
+    <link rel="stylesheet" href="./assets/css/tabelas.css">
+    
+</head>
+<body>
+    <div class="menu"></div>
+
+    <div class="main">
+        <div class="header">
+            <span>Novo Pedido de Requisição</span>
+        </div>
+        <div class="conteudo">
+            <div class="dadosPrincipais">
+                <div class="titulo">
+                    <span>Dados Principais | Requisição Nº </span>
+                    <input type="number" id="inpNumero">
+                </div>
+                <div class="camposPrincipais">
+                    <div class="camposPrincipaisLinha1 linhasCampos">
+                        <div class="grupo1 grupoInput">
+                            <span>ID.</span>
+                            <input type="number" id="idDepartamento" data-obrigatorio="true">
+                        </div>
+                        <div class="grupo2 grupoInput">
+                            <span>Departamento</span>
+                            <input type="text" id="departamento" data-obrigatorio="true">
+                        </div>
+                        <div class="grupo3 grupoInput">
+                            <span>Data</span>
+                            <input type="date" id="dataRequisicao" data-obrigatorio="true">
+                        </div>
+                    </div>
+                    <div class="camposPrincipaisLinha2 linhasCampos">
+                        <div class="grupo4 grupoInput">
+                            <span>ID Func.</span>
+                            <input type="number" id="idFuncionario" data-obrigatorio="true">
+                        </div>
+                        <div class="grupo5 grupoInput">
+                            <span>Nome Funcionário</span>
+                            <input type="text" id="NomeFuncionario">
+                        </div>
+                        <div class="grupo6 grupoInput">
+                            <span>Cargo</span>
+                            <input type="text" id="cargo" disabled data-obrigatorio="true">
+                        </div>
+                    </div>
+                    <div class="camposPrincipaisLinha3 linhasCampos">
+                        <div class="grupo7 grupoInput">
+                            <span>Categoria Motivo</span>  
+                            <div class="grupoCategoria">                                                         
+                                <select id="categoriaMotivo" data-obrigatorio="true"></select>
+                                <img class="btnAdd" src="./assets/img/add.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="grupo8 grupoInput">
+                            <span>Motivo</span> 
+                            <div class="grupoMotivo"> 
+                                <select id="Motivo" data-obrigatorio="true"></select>
+                                <img class="btnAdd" src="./assets/img/add.svg" alt="">
+                            </div>                            
+                   
+                        </div>
+                        <div class="grupo9 grupoInput">
+                            <span>Nível de Prioridade</span>
+                            <div class="radioPrioridade" id="radioPrioridade">
+                                <div class="grupoPrioridade">
+                                    <input class="chkPrioridade" type="radio" name="prioridade" id="urgente">
+                                    <span>Urgente</span>
+                                    
+                                </div>
+                                <div class="grupoPrioridade">
+                                    <input class="chkPrioridade" type="radio" name="prioridade" id="medio">
+                                    <span>Médio</span>
+                                   
+                                </div>
+                                <div class="grupoPrioridade">
+                                    <input class="chkPrioridade" type="radio" name="prioridade" id="baixo">
+                                    <span>Baixo</span>
+                                    
+                                </div>
+                                
+                                
+                             
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="itensRequisicao">
+                <div class="titulo">
+                    <span>Itens da Requisição </span>                
+                </div>
+                <div class="camposItens">
+                    <div class="linhaAdicionarItens">
+                        
+                            <div class="grupoProduto">
+                                <span>Cod. Produto</span>
+                                <input type="text" id="CodigoProduto">
+                            </div>
+                            <div class="grupoProdutoDescricao">
+                                <span>Descrição</span>
+                                <input type="text" id="DescricaoProduto">
+                            </div>
+                            <div class="grupoEstoque">
+                                <span>Estoque</span>
+                                <input type="text" id="Estoque">
+                            </div>
+                            <div class="grupoQuantidade">
+                                <span>Quantidade</span>
+                                <input type="text" data-mask="000000000" id="Quantidade" disabled>
+                            </div>
+                        
+                        
+                            <div class="grupoStatusEstoque"> 
+                                <div>
+                                    <img src="./assets/img/verde.svg" alt="">
+                                </div>                           
+                          
+                            </div>
+                            <div class="grupoBtnInserirItens">
+                                <div class="BtnInserirItens" id="btnAdicionarItens">  
+                                    <span>Adicionar</span>
+                                </div>
+                            </div>
+                            
+                    </div>
+                    <div class="tabela">
+                        <table class="tabelaItens" id="tabelaItens">
+                            <tr>
+                                <th>Código</th>
+                                <th>Produto</th>
+                                <th>Qtd</th>
+                                <th>Un.</th>
+                                <th>Preço</th>
+                                <th>Total</th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="linhaTotal">
+                    <span>Total</span>
+                    <input type="text" readonly id="total" value="0">
+                </div>
+                <div class="grupoBtnInserirItens">
+                    <div class="BtnInserirItens" id="btnVerificar">
+                        <span>Gravar</span>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+
+<script src="./assets/scripts/dados.js"></script>
+<script src="./assets/scripts/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>
