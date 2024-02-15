@@ -20,3 +20,39 @@
     border-collapse: collapse;
     padding-left: 10px;
 }
+
+.tooltip {
+    position: relative;
+    cursor: pointer;
+    
+}
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 300px; 
+    background-color: #696969b2;
+    color: #fff;
+    text-align: left;
+    border-radius: 6px;
+    padding: 10px;
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;    
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+.grid-item-img { grid-area: 1 / 1 / 4 / 2; }
+.grid-item-text { grid-area: 1 / 2 / 4 / 6; }

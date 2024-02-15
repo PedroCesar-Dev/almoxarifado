@@ -4,17 +4,17 @@
     padding: 0;
 }
 
-#urgente:checked{
-    border: 1px solid red;      
+.urgente:checked{
+    border: 1px solid #ff0000;      
     background-color: red;
     transform: scale(1.2);
 }
-#medio:checked{
-    border: 1px solid yellow;      
+.medio:checked{
+    border: 1px solid #ffff00;      
     background-color: yellow;
     transform: scale(1.2);    
 }
-#baixo:checked{
+.baixo:checked{
     border: 1px solid green;      
     background-color: green;
     transform: scale(1.2);

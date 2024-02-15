@@ -1,7 +1,7 @@
 const categorias = [
     {
         "idCategoria": 1,
-        "Descricao": "Gestão",
+        "Descricao": "Gerencia",
     },
     {
         "idCategoria": 2,
@@ -9,7 +9,7 @@ const categorias = [
     },
     {
         "idCategoria": 3,
-        "Descricao": "RP",
+        "Descricao": "Funcionario",
     },
 ]
 
@@ -71,7 +71,7 @@ const produtos = [
     {
         "idProduto": 1,
         "Descricao": "Maçã",
-        "Estoque": 10,
+        "Estoque": 50,
         "EstoqueMinimo": 5,
         "Preco": 1,
         "Unidade": "Un",
@@ -79,7 +79,7 @@ const produtos = [
     {
         "idProduto": 2,
         "Descricao": "Pera",
-        "Estoque": 10,
+        "Estoque": 50,
         "EstoqueMinimo": 5,
         "Preco": 2,
         "Unidade": "Un",
@@ -87,7 +87,7 @@ const produtos = [
     {
         "idProduto": 3,
         "Descricao": "Uva",
-        "Estoque": 10,
+        "Estoque": 50,
         "EstoqueMinimo": 5,
         "Preco": 4,
         "Unidade": "Cacho",
@@ -95,7 +95,7 @@ const produtos = [
     {
         "idProduto": 4,
         "Descricao": "Melância",
-        "Estoque": 10,
+        "Estoque": 50,
         "EstoqueMinimo": 5,
         "Preco": 5,
         "Unidade": "Un",
@@ -112,7 +112,7 @@ const departamentos = [
     {
         "idDep": 2,
         "Descricao": "Sec. Trabalho",
-        "Responsavel": "Menino Feio"
+        "Responsavel": ""
     },
     {
         "idDep": 3,
